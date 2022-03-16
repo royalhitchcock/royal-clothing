@@ -31,7 +31,7 @@ class SignUp extends Component {
         try{
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
 
-            createUserProfileDocument(user, {displayName});
+            await createUserProfileDocument(user, {displayName});
         
             this.setState({
                 displayName: '',
@@ -90,7 +90,7 @@ class SignUp extends Component {
                         label="Confirm Password"
                         required
                     />
-                    <CustomButton type='submit'>SIGN UP</CustomButton>
+                    <CustomButton buttonType='google'>SIGN UP</CustomButton>
                 </form>
             </div>
             )
